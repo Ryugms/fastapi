@@ -1,0 +1,13 @@
+version: '1'
+
+services:
+  db:
+    image: 'bitnaw1/mongodb:latest'
+    ports:
+      - 27017:27017
+    restart: on-failure
+    environment:
+      - MONGODB_REPLICA_SET_MODE=primary
+      - MONGODB_REPLICA_SET_NAME=rsa
+      - MONGODB_ADVERSTISE_HOSTNAME=localhost
+      - ALLOW_EMPYT_PASSWORD=yes
